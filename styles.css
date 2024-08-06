@@ -1,17 +1,48 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #E9E4D8;
+    background-image: url('images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
+    flex: 1;
 }
 
 h1 {
-    font-size: 3em;
-    color: #333;
+    font-size: 2em;
+    color: #D97C5E;
+    text-align: center;
+    margin: 0 20px;
 }
 
 .buttons {

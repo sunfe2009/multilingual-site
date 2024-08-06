@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const greetingElement = document.getElementById('greeting');
 
     const greetings = {
-        'en': 'Hello, World!',
-        'zh': '你好，世界！',
-        'ja': 'こんにちは、世界！'
+        'en': 'Finding partners around the world to team up and use Claude together',
+        'zh': '在全世界寻找伙伴，一起组队使用 Claude',
+        'ja': '世界中の仲間を見つけて、Claudeを一緒に使おう'
     };
 
     function setGreeting(lang) {
