@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const userLang = navigator.language || navigator.userLanguage;
     const greetingElement = document.getElementById('greeting');
 
     const greetings = {
@@ -8,13 +7,24 @@ document.addEventListener('DOMContentLoaded', function() {
         'ja': 'こんにちは、世界！'
     };
 
-    let greeting = greetings['en']; // Default to English
-
-    if (userLang.startsWith('zh')) {
-        greeting = greetings['zh'];
-    } else if (userLang.startsWith('ja')) {
-        greeting = greetings['ja'];
+    function setGreeting(lang) {
+        greetingElement.textContent = greetings[lang] || greetings['en'];
     }
 
-    greetingElement.textContent = greeting;
+    function detectLanguage() {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang.startsWith('zh')) {
+            return 'zh';
+        } else if (userLang.startsWith('ja')) {
+            return 'ja';
+        } else {
+            return 'en';
+        }
+    }
+
+    // Set initial greeting based on detected language
+    setGreeting(detectLanguage());
+
+    // Make setGreeting available globally
+    window.setLanguage = setGreeting;
 });
